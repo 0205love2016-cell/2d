@@ -60,8 +60,10 @@
   // 初始化狀態
   const now = new Date();
   const nextMonthDate = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-  const targetYear = nextMonthDate.getFullYear();
-  const targetMonth = nextMonthDate.getMonth() + 1;
+  const qYear = parseInt(urlParams.get('year'), 10);
+  const qMonth = parseInt(urlParams.get('month'), 10);
+  const targetYear = (!isNaN(qYear) && qYear > 2000) ? qYear : nextMonthDate.getFullYear();
+  const targetMonth = (!isNaN(qMonth) && qMonth >= 1 && qMonth <= 12) ? qMonth : (nextMonthDate.getMonth() + 1);
   const cacheKey = `leave_cache_brigade2_${targetYear}_${targetMonth}`;
 
   let latestInitData = null;
