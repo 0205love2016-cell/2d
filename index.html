@@ -59,7 +59,7 @@
 
   // 初始化狀態
   const now = new Date();
-  const nextMonthDate = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+  const nextMonthDate = new Date(2026, 10, 1); // 暫時指定 2026/11 供 11 月份測試（原始設定已備份於 _原始設定備份_12月基準）
   const qYear = parseInt(urlParams.get('year'), 10);
   const qMonth = parseInt(urlParams.get('month'), 10);
   const targetYear = (!isNaN(qYear) && qYear > 2000) ? qYear : nextMonthDate.getFullYear();
